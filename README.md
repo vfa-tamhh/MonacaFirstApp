@@ -2,7 +2,7 @@
 
 ![RendaGame](/readme-img/RendaGame.png)
 
-※Monacaデバッガー使用時(iPhone)の画面例です
+* [Monacaデバッガー](https://ja.monaca.io/debugger.html)使用時(iPhone6)の画面例です
 
 ## コンテンツ概要
 
@@ -35,6 +35,7 @@
 1. 作成されたプロジェクトを「開く」をクリックして開きます
 1. プロジェクトが開き、プレビュー画面が表示されます
  * プレビュー画面あるいは[Monacaデバッガー](https://ja.monaca.io/debugger.html)で遊んでみましょう！
+* 動作確認は、プレビュー画面・Monacaデバッガーいずれも__iPhone6__の使用を推奨します
 
 #### 「連打ゲーム」の操作方法
 
@@ -98,8 +99,8 @@ console.log("保存に成功しました。");
 console.log("保存に失敗しました。エラー:" + error); 
 ```
 
-* __コンソールログの確認方法__
- * プレビュー画面の場合：「F12」キー＞「コンソール」に表示されます
+* __コンソールログの確認方法（ブラウザのコンソール表示）__
+ * プレビュー画面の場合：【Windows】→「F12」キーまたは「Ctrl+Shift+K」、【Mac】「Command+Option+K」で表示されます
  * [デバッガー](https://ja.monaca.io/debugger.html)の場合：画面のアイコンをタップし、「!」マークのアイコンをクリックすると「App Log」画面に表示されます
 
 __【作業1-2】__プレビュー画面あるいは[デバッガー](https://ja.monaca.io/debugger.html)で実行し、「Start」ボタンを押してゲームを遊びます
@@ -147,8 +148,8 @@ console.log("検索に成功しました。");
 console.log("検索に失敗しました。エラー:" +error);
 ```
 
-* __コンソールログの確認方法__
- * プレビュー画面の場合：「F12」キー＞「コンソール」に表示されます
+* __コンソールログの確認方法（ブラウザのコンソール表示）__
+ * プレビュー画面の場合：【Windows】→「F12」キーまたは「Ctrl+Shift+K」、【Mac】「Command+Option+K」で表示されます
  * [デバッガー](https://ja.monaca.io/debugger.html)の場合：画面のアイコンをタップし、「!」マークのアイコンをクリックすると「App Log」画面に表示されます
 
 __【作業2-2】__プレビュー画面あるいは[デバッガー](https://ja.monaca.io/debugger.html)で実行し、「ランキングを見る」ボタンをタップします
