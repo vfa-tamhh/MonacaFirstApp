@@ -2,7 +2,7 @@
 
 ![RendaGame](/readme-img/RendaGame.png)
 
-※Monacaデバッガー使用時の画面え例です
+※Monacaデバッガー使用時(iPhone)の画面例です
 
 ## コンテンツ概要
 
@@ -32,7 +32,7 @@
 1. 「インポート」をクリックするとインポートされたプロジェクトが作成されます
 1. 作成されたプロジェクトを「開く」をクリックして開きます
 1. プロジェクトが開き、プレビュー画面が表示されます
- * プレビュー画面で遊んでみましょう！（[Monacaデバッガー](https://ja.monaca.io/debugger.html)も利用可能です）
+ * プレビュー画面あるいは[Monacaデバッガー](https://ja.monaca.io/debugger.html)で遊んでみましょう！
 
 #### 「連打ゲーム」の操作方法
 
@@ -75,32 +75,34 @@
 
 ### ヒント
 * [ニフティクラウドmobile backend](http://mb.cloud.nifty.com/)のドキュメントページをご活用ください
- * [データストア（Monaca）](http://mb.cloud.nifty.com/doc/current/datastore/basic_usage_monaca.html)
+ * [データストア（Monaca）：基本的な使い方](http://mb.cloud.nifty.com/doc/current/datastore/basic_usage_monaca.html)
 
 ### コーディング後の作業
 問題１のコーディングが完了したら、下記の作業を行います
 
 __【作業1-1】__それぞれ該当する箇所に以下の処理を追記して、実行時にコンソールにログを表示できるようにします
 
-* 保存に失敗した場合の処理を行う箇所に追記
+* 保存に成功した場合の処理を行う箇所に追記
 
 ```js
 // 保存に成功した場合の処理
 console.log("保存に成功しました。");
 ```
 
-* 保存に成功した場合の処理を行う箇所に追記
+* 保存に失敗した場合の処理を行う箇所に追記
 
 ```js
 // 保存に成功した場合の処理
 console.log("保存に失敗しました。エラー:" + error); 
 ```
 
-※コンソールの確認方法：「F12」キーを押す→「コンソール」に表示されます
+* __コンソールログの確認方法__
+ * プレビュー画面の場合：「F12」キー＞「コンソール」に表示されます
+ * [デバッガー](https://ja.monaca.io/debugger.html)の場合：画面のアイコンをタップし、「!」マークのアイコンをクリックすると「App Log」画面に表示されます
 
-__【作業1-2】__シュミレーターで実行、「Start」ボタンを押してゲームを遊びます
+__【作業1-2】__プレビュー画面あるいは[デバッガー](https://ja.monaca.io/debugger.html)で実行し、「Start」ボタンを押してゲームを遊びます
 
-* 名前を入力し、「OK」がクリックされると【問題１】で作成した`saveScore`メソッドが呼ばれ、データが保存されます
+* 名前を入力し、「OK」をクリックすると【問題１】で作成した`saveScore`メソッドが呼ばれ、データが保存されます
 * このとき下記のいずれかのログが出力されます
 
  * 「`保存に成功しました。objectId:************`」の場合は保存成功です
@@ -121,7 +123,8 @@ __【作業1-2】__シュミレーターで実行、「Start」ボタンを押�
 
 ### ヒント
 * [ニフティクラウドmobile backend](http://mb.cloud.nifty.com/)のドキュメントページをご活用ください
- * [データストア（Monaca）](http://mb.cloud.nifty.com/doc/current/datastore/basic_usage_monaca.html)
+ * [データストア（Monaca）：基本的な使い方](http://mb.cloud.nifty.com/doc/current/datastore/basic_usage_monaca.html)
+ * [データストア（Monaca）：ランキングを作る](http://mb.cloud.nifty.com/doc/current/datastore/ranking_monaca.html)
 
 ### コーディング後の作業
 問題２のコーディングが完了したら、下記の作業を行います
@@ -142,7 +145,11 @@ console.log("検索に成功しました。");
 console.log("検索に失敗しました。エラー:" +error);
 ```
 
-__【作業2-2】__シュミレーターで実行し、「ランキングを見る」ボタンをタップします
+* __コンソールログの確認方法__
+ * プレビュー画面の場合：「F12」キー＞「コンソール」に表示されます
+ * [デバッガー](https://ja.monaca.io/debugger.html)の場合：画面のアイコンをタップし、「!」マークのアイコンをクリックすると「App Log」画面に表示されます
+
+__【作業2-2】__プレビュー画面あるいは[デバッガー](https://ja.monaca.io/debugger.html)で実行し、「ランキングを見る」ボタンをタップします
 * 画面起動後、`checkRanking`メソッドが呼ばれ、【問題１】で保存されたデータが検索・取得されます
 * このとき下記のいずれかのログが出力されます
 
@@ -160,7 +167,7 @@ __【作業2-3】__検索に成功したら、該当する箇所に以下の処�
 setData(results);
 ```
 
-__【作業2-4】__プレビュー画面あるいは[デバッガー](https://ja.monaca.io/debugger.html)で実行、「ランキングを見る」ボタンを押します
+__【作業2-4】__プレビュー画面あるいは[デバッガー](https://ja.monaca.io/debugger.html)で実行し、「ランキングを見る」ボタンを押します
 
 * 先ほどのスコアが表示されれば完成です！おめでとうございます★
 
