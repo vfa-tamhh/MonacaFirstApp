@@ -29,8 +29,8 @@
 1. [Monaca](https://ja.monaca.io/)にログインします
 1. 左上の「Import Project」をクリックします
 1. 「プロジェクト名」を入力します　例）「連打アプリ」
-1. 「インポート方法」の「URLを指定してインポート」をチェックし、下記リンクをコピーして貼り付けます
- * `https://github.com/natsumo/MonacaFirstApp/archive/master.zip`
+1. 「インポート方法」の「URLを指定してインポート」をチェックし、下記リンクを右クリックでコピーし、貼り付けます
+ * 問題用プロジェクト：__[連打ゲーム](https://github.com/natsumo/MonacaFirstApp/archive/master.zip)__
 1. 「インポート」をクリックするとインポートされたプロジェクトが作成されます
 1. 作成されたプロジェクトを「開く」をクリックして開きます
 1. プロジェクトが開き、プレビュー画面が表示されます
