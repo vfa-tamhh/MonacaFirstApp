@@ -2,6 +2,8 @@
 
 ![RendaGame](/readme-img/RendaGame.png)
 
+※Monacaデバッガー使用時の画面え例です
+
 ## コンテンツ概要
 
 * [ニフティクラウドmobile backend](http://mb.cloud.nifty.com/)の機能『データストア』を学習するための問題集です
@@ -13,21 +15,24 @@
 
 * 問題は２問あります
 * ２問クリアすると「連打ゲーム」にオンラインランキング機能を実装したアプリが完成します
-* 問題を取り組む上で必要な開発環境は以下です
- * Mac OS X 10.10(Yosemite)以上
- * Xcode ver.7 以上
- 
+* [Monaca](https://ja.monaca.io/)（ハイブリットアプリ開発環境）を使用してアプリを作成します
+ * アカウントをお持ちでない場合は会員登録（無料）が必要です。
+
 ## 問題に取り組む前の準備
 
-### プロジェクトのダウンロード
+### Monacaでプロジェクトインポートしてアプリを起動
 
-▼問題用プロジェクト▼
+![Monaca](/readme-img/Monaca.png)
 
-[__「連打ゲーム」__](https://github.com/natsumo/SwiftFirstApp/archive/master.zip)
-
-1. 上記リンクをクリックしてzipファイルをローカルに保存します
-1. zipファイルを解凍して、`SwiftFirstApp.xcworkspace`をダブルクリックしてXcodeでプロジェクトを開きます
-1. アプリを実行し、「連打ゲーム」で遊んでみましょう
+1. [Monaca](https://ja.monaca.io/)にログインします
+1. 左上の「Import Project」をクリックします
+1. 「プロジェクト名」を入力します　例）「連打アプリ」
+1. 「インポート方法」の「URLを指定してインポート」をチェックし、下記リンクをコピーして貼り付けます
+ * `https://github.com/natsumo/MonacaFirstApp/archive/master.zip`
+1. 「インポート」をクリックするとインポートされたプロジェクトが作成されます
+1. 作成されたプロジェクトを「開く」をクリックして開きます
+1. プロジェクトが開き、プレビュー画面が表示されます
+ * プレビュー画面で遊んでみましょう！（[Monacaデバッガー](https://ja.monaca.io/debugger.html)も利用可能です）
 
 #### 「連打ゲーム」の操作方法
 
@@ -36,6 +41,7 @@
 3. 10秒間の間に何回タップできるかを競う単純なゲームです
 4. 10秒経つと名前を入力するアラートが表示されますので、入力し「OK」をクリックします
 5. 画面に名前とスコアが表示されます
+ * 4.で「キャンセル」をクリックした場合は「保存がキャンセルされました」と表示されます
 
 ※__注意__：問題に取り組む前の状態では「ランキングを見る」ボタンをタップしてもランキングは表示されません
 
@@ -48,9 +54,9 @@
 * アプリが作成されるとAPIキーが２種類（アプリケーションキーとクライアントキー）発行されます
  * 次で使用します。
 
-![Xcode](/readme-img/Xcode.png)
+![Monaca](/readme-img/Monaca.png)
 
-* `AppDelegate.swift`を編集します
+* `js/tapGame.js`を編集します
 * 先程[ニフティクラウドmobile backend](http://mb.cloud.nifty.com/)のダッシュボード上で確認したAPIキーを貼り付けます
 
 ![問題0-1](/readme-img/0-1.png)
@@ -59,7 +65,7 @@
  * このとき、ダブルクォーテーション（`"`）を消さないように注意してください！
 
 ## __【問題１】__：名前とスコアの保存をしてみよう！
-`GameViewController.swift`を開きます。下図の__`saveScore`__メソッドを編集し、引数の__`name`__（アラートで入力した名前）と__`score`__（連打ゲームでタップした回数）の値をmBaaSに保存する処理をコーディングしてください
+`js/tapGame.js`を開きます。下図の__`saveScore`__メソッドを編集し、引数の__`name`__（アラートで入力した名前）と__`score`__（連打ゲームでタップした回数）の値をmBaaSに保存する処理をコーディングしてください
 
 ![問題1-1](/readme-img/1-1.png)
 
@@ -68,27 +74,29 @@
 * `name`を保存するフィールドを「`name`」、`score`を保存するフィールドを「`score`」として保存してください
 
 ### ヒント
-* [ニフティクラウドmobile backend](http://mb.cloud.nifty.com/)のiOSドキュメントはObjective-Cで書かれていますので、Swiftに書き換えたものを用意しました
- * [Swiftでデータベースを使おう！①（保存・取得・更新・削除）](http://qiita.com/natsumo/items/c00cf7a48e0f8cd8d236)
+* [ニフティクラウドmobile backend](http://mb.cloud.nifty.com/)のドキュメントページをご活用ください
+ * [データストア（Monaca）](http://mb.cloud.nifty.com/doc/current/datastore/basic_usage_monaca.html)
 
 ### コーディング後の作業
 問題１のコーディングが完了したら、下記の作業を行います
 
-__【作業1-1】__それぞれ該当する箇所に以下の処理を追記して、実行時にXcode上にログを表示できるようにします
+__【作業1-1】__それぞれ該当する箇所に以下の処理を追記して、実行時にコンソールにログを表示できるようにします
 
 * 保存に失敗した場合の処理を行う箇所に追記
 
-```swift
-// 保存に失敗した場合の処理
-print("エラーが発生しました。エラーコード:\(error.code)")
+```js
+// 保存に成功した場合の処理
+console.log("保存に成功しました。");
 ```
 
 * 保存に成功した場合の処理を行う箇所に追記
 
-```swift
+```js
 // 保存に成功した場合の処理
-print("保存に成功しました。objectId:\(obj.objectId)")
+console.log("保存に失敗しました。エラー:" + error); 
 ```
+
+※コンソールの確認方法：「F12」キーを押す→「コンソール」に表示されます
 
 __【作業1-2】__シュミレーターで実行、「Start」ボタンを押してゲームを遊びます
 
@@ -96,46 +104,42 @@ __【作業1-2】__シュミレーターで実行、「Start」ボタンを押�
 * このとき下記のいずれかのログが出力されます
 
  * 「`保存に成功しました。objectId:************`」の場合は保存成功です
- * 「`エラーが発生しました。エラーコード:************`」の場合は保存失敗です
-
-※エラーコードが出た場合は[こちら](http://mb.cloud.nifty.com/doc/current/rest/common/error.html#REST%20API%E3%81%AE%E3%82%A8%E3%83%A9%E3%83%BC%E3%82%B3%E3%83%BC%E3%83%89%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6)で確認できます
+ * 「`保存に失敗しました。エラー::************`」の場合は保存失敗です
 
 ### 答え合わせ
 
 ▼答えはこちら▼
 
-[__【問題１】解答__](https://github.com/natsumo/SwiftFirstApp/blob/AnswerProject/Answer1.md)
-
+[__【問題１】解答__](https://github.com/natsumo/MonacaFirstApp/blob/AnswerProject/Answer1.md)
 
 ## __【問題２】__：ランキングを表示しよう！
-`RankingViewController.swift`を開きます。下図の`checkRanking`メソッドを編集し、データストアの`GameScore`クラスに保存した`name`と`score`のデータを`score`の降順（スコアの高い順）で検索・取得する処理をコーディングしてください
+`js/Ranking.js`を開きます。下図の`checkRanking`メソッドを編集し、データストアの`GameScore`クラスに保存した`name`と`score`のデータを`score`の降順（スコアの高い順）で検索・取得する処理をコーディングしてください
 
 ![問題2-1](/readme-img/2-1.png)
 
 * 検索データ件数は５件とします
- * ただし、この値は「`rankingNumber`」としてフィールドに設定しているため、「`5`」の代わりに「`Int32(rankingNumber)`」を使用して設定してください
 
 ### ヒント
-* [ニフティクラウドmobile backend](http://mb.cloud.nifty.com/)のiOSドキュメントはObjective-Cで書かれていますので、Swiftに書き換えたものを用意しました
- * [Swiftでデータベースを使おう！③（ランキングを作る・アクセス権限）](http://qiita.com/natsumo/items/25074fa1ce209033e98e)
+* [ニフティクラウドmobile backend](http://mb.cloud.nifty.com/)のドキュメントページをご活用ください
+ * [データストア（Monaca）](http://mb.cloud.nifty.com/doc/current/datastore/basic_usage_monaca.html)
 
 ### コーディング後の作業
 問題２のコーディングが完了したら、下記の作業を行います
 
-__【作業2-1】__該当する箇所に以下の処理を追記して、実行時にXcode上にログを表示できるようにします
-
-* 検索に失敗した場合の処理を行う箇所に追記
-
-```swift
-// 検索に失敗した場合の処理
-print("検索に失敗しました。エラーコード:\(error.code)")
-```
+__【作業2-1】__それぞれ該当する箇所に以下の処理を追記して、実行時にコンソールにログを表示できるようにします
 
 * 検索に成功した場合の処理を行う箇所に追記
 
-```swift
+```js
 // 検索に成功した場合の処理
-print("検索に成功しました。")
+console.log("検索に成功しました。");
+```
+
+* 検索に失敗した場合の処理を行う箇所に追記
+
+```js
+// 検索に失敗した場合の処理
+console.log("検索に失敗しました。エラー:" +error);
 ```
 
 __【作業2-2】__シュミレーターで実行し、「ランキングを見る」ボタンをタップします
@@ -143,24 +147,20 @@ __【作業2-2】__シュミレーターで実行し、「ランキングを見�
 * このとき下記のいずれかのログが出力されます
 
  * 「`検索に成功しました。`」が表示された場合は検索成功です
- * 「`検索に失敗しました。エラーコード:************`」が表示された場合は検索失敗です
-
-※エラーコードが出た場合は[こちら](http://mb.cloud.nifty.com/doc/current/rest/common/error.html#REST%20API%E3%81%AE%E3%82%A8%E3%83%A9%E3%83%BC%E3%82%B3%E3%83%BC%E3%83%89%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6)で確認できます
+ * 「`検索に失敗しました。エラー:************`」が表示された場合は検索失敗です
 
 * 検索の状態（成功・失敗）に関係なく、「ランキングを見る」ボタンをタップしても、まだランキングは表示されません
 
-__【作業2-3】__検索に成功したら、該当する箇所に以下の処理を追記して、取得した値から必要なデータを取り出し、ランキング画面へ反映させます
+__【作業2-3】__検索に成功したら、該当する箇所に以下の処理を追記して、取得した値から必要なデータを取り出し、ランキング画面へ反映させる`setData`メソッドを呼びます
 
 * 検索に成功した場合の処理を行う箇所に追記
 
-```swift
-// 取得したデータを格納
-self.rankingArray = objects as! Array
-// テーブルビューをリロード
-self.rankingTableView.reloadData()
+```js
+// テーブルにデータをセット
+setData(results);
 ```
 
-__【作業2-4】__シュミレーターで実行、「ランキングを見る」ボタンを押します
+__【作業2-4】__プレビュー画面あるいは[デバッガー](https://ja.monaca.io/debugger.html)で実行、「ランキングを見る」ボタンを押します
 
 * 先ほどのスコアが表示されれば完成です！おめでとうございます★
 
@@ -168,7 +168,7 @@ __【作業2-4】__シュミレーターで実行、「ランキングを見る�
 
 ▼答えはこちら▼
 
-[__【問題２】解答__](https://github.com/natsumo/SwiftFirstApp/blob/AnswerProject/Answer2.md)
+[__【問題２】解答__](https://github.com/natsumo/MonacaFirstApp/blob/AnswerProject/Answer2.md)
 
 ## 参考
 
@@ -176,6 +176,6 @@ __【作業2-4】__シュミレーターで実行、「ランキングを見る�
 
 ▼完成版プロジェクト▼
 
-[__「【完成版】連打ゲーム」__](https://github.com/natsumo/SwiftFirstApp/archive/AnswerProject.zip)
+[__「【完成版】連打ゲーム」__](https://github.com/natsumo/MonacaFirstApp/archive/AnswerProject.zip)
 
 * APIキーを設定してご利用ください
