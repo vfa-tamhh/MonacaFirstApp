@@ -2,7 +2,7 @@
 //  tapGame.js
 //  MonacaFirstApp
 //
-//  Created by Natsumo Ikeda on 2016/06/29.
+//  Created by Natsumo Ikeda on 2016/07/01.
 //  Copyright © 2016年 NIFTY Corporation. All rights reserved.
 //
 
