@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <widget xmlns="http://www.w3.org/ns/widgets" id="com.example.helloworld" version="1.0.0">
   <name>TODO App</name>
-  <description/>
+  <description>Made with Monaca (http://monaca.mobi)</description>
   <author/>
   <content src="index.html"/>
   <access origin="*"/>
@@ -39,4 +39,6 @@
   <preference name="monaca:AndroidIsPackageNameSeparate" value="false"/>
   <preference name="monaca:targetFamilyiPhone" value="1"/>
   <preference name="monaca:targetFamilyiPad" value="1"/>
+  <preference name="WindowsStorePublisherName" value="My Name"/>
+  <preference name="WindowsStoreIdentityName" value="c3ae500a-87bd-c11a-0848-2b848606cf03"/>
 </widget>
