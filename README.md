@@ -101,7 +101,7 @@ console.log("保存に失敗しました。エラー:" + error);
 ```
 
 * __コンソールログの確認方法（ブラウザのコンソール表示）__
- * プレビュー画面の場合：【Windows】→「F12」キーまたは「Ctrl+Shift+K」、【Mac】「Command+Option+K」で表示されます
+ * プレビュー画面の場合：【Windows】→「F12」キーまたは「Ctrl+Shift+K」、【Mac】「Command+Option+I」で表示されます
  * [デバッガー](https://ja.monaca.io/debugger.html)の場合：画面のアイコンをタップし、「!」マークのアイコンをクリックすると「App Log」画面に表示されます
 
 * __注意__：入力が完了したら必ず__「保存」をクリック__してプロジェクトを保存してください！
@@ -153,7 +153,7 @@ console.log("検索に失敗しました。エラー:" +error);
 ```
 
 * __コンソールログの確認方法（ブラウザのコンソール表示）__
- * プレビュー画面の場合：【Windows】→「F12」キーまたは「Ctrl+Shift+K」、【Mac】「Command+Option+K」で表示されます
+ * プレビュー画面の場合：【Windows】→「F12」キーまたは「Ctrl+Shift+K」、【Mac】「Command+Option+I」で表示されます
  * [デバッガー](https://ja.monaca.io/debugger.html)の場合：画面のアイコンをタップし、「!」マークのアイコンをクリックすると「App Log」画面に表示されます
 
 * __注意__：入力が完了したら必ず__「保存」をクリック__してプロジェクトを保存してください！
