@@ -6,10 +6,10 @@
 
 ## コンテンツ概要
 
-* [ニフクラ mobile backend](http://mb.cloud.nifty.com/)の機能『データストア』を学習するための問題集です
- * [ニフクラ mobile backend](http://mb.cloud.nifty.com/)の利用登録（無料）が必要です。
+* [ニフクラ mobile backend](https://mbaas.nifcloud.com/)の機能『データストア』を学習するための問題集です
+ * [ニフクラ mobile backend](https://mbaas.nifcloud.com/)の利用登録（無料）が必要です。
 * 問題用プロジェクトにはオンラインランキング機能が実装されていない状態の「連打ゲーム」です
- * 既に実装済みの[ニフクラ mobile backend](http://mb.cloud.nifty.com/)を利用するための準備（SDK導入など）方法の詳細は[こちら](http://mb.cloud.nifty.com/doc/current/introduction/quickstart_ios.html)をご覧ください。
+ * 既に実装済みの[ニフクラ mobile backend](https://mbaas.nifcloud.com/)を利用するための準備（SDK導入など）方法の詳細は[こちら](https://mbaas.nifcloud.com/doc/current/introduction/quickstart_ios.html)をご覧ください。
 
 ## 問題について
 
@@ -53,7 +53,7 @@
 
 ![mBaaS](/readme-img/mBaaS.png)
 
-*  [ニフクラ mobile backend](http://mb.cloud.nifty.com/)にログインしアプリの新規作成を行います
+*  [ニフクラ mobile backend](https://mbaas.nifcloud.com/)にログインしアプリの新規作成を行います
  * アプリ名はわかりやすいものにしましょう。例）「renda」
 * アプリが作成されるとAPIキーが２種類（アプリケーションキーとクライアントキー）発行されます
  * 次で使用します。
@@ -61,7 +61,7 @@
 ![Monaca](/readme-img/Monaca.png)
 
 * `js/tapGame.js`を編集します
-* 先程[ニフクラ mobile backend](http://mb.cloud.nifty.com/)のダッシュボード上で確認したAPIキーを貼り付けます
+* 先程[ニフクラ mobile backend](https://mbaas.nifcloud.com/)のダッシュボード上で確認したAPIキーを貼り付けます
 
 ![問題0-1](/readme-img/0-1.png)
 
@@ -78,8 +78,8 @@
 * `name`を保存するフィールドを「`name`」、`score`を保存するフィールドを「`score`」として保存してください
 
 ### ヒント
-* [ニフクラ mobile backend](http://mb.cloud.nifty.com/)のドキュメントページをご活用ください
- * [データストア（Monaca）：基本的な使い方](http://mb.cloud.nifty.com/doc/current/datastore/basic_usage_monaca.html)
+* [ニフクラ mobile backend](https://mbaas.nifcloud.com/)のドキュメントページをご活用ください
+ * [データストア（Monaca）：基本的な使い方](https://mbaas.nifcloud.com/doc/current/datastore/basic_usage_monaca.html)
 
 ### コーディング後の作業
 問題１のコーディングが完了したら、下記の作業を行います
@@ -129,9 +129,9 @@ __【作業1-2】__プレビュー画面あるいは[デバッガー](https://ja
 * 検索データ件数は５件とします
 
 ### ヒント
-* [ニフクラ mobile backend](http://mb.cloud.nifty.com/)のドキュメントページをご活用ください
- * [データストア（Monaca）：基本的な使い方](http://mb.cloud.nifty.com/doc/current/datastore/basic_usage_monaca.html)
- * [データストア（Monaca）：ランキングを作る](http://mb.cloud.nifty.com/doc/current/datastore/ranking_monaca.html)
+* [ニフクラ mobile backend](https://mbaas.nifcloud.com/)のドキュメントページをご活用ください
+ * [データストア（Monaca）：基本的な使い方](https://mbaas.nifcloud.com/doc/current/datastore/basic_usage_monaca.html)
+ * [データストア（Monaca）：ランキングを作る](https://mbaas.nifcloud.com/doc/current/datastore/ranking_monaca.html)
 
 ### コーディング後の作業
 問題２のコーディングが完了したら、下記の作業を行います
